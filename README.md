@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗳️ AKLLAI - Plataforma de Voto Informado con IA
 
-## Getting Started
+> "Proporcionar una plataforma transparente y centralizada que empodere al ciudadano peruano mediante datos abiertos e inteligencia artificial."
 
-First, run the development server:
+## 📖 Sobre el Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**AKLLAI** (vocablo que evoca "elección" o "selección") es una iniciativa tecnológica nacida para cerrar la brecha de información entre los ciudadanos y los candidatos políticos en Perú. Este proyecto sirve como laboratorio de aprendizaje para implementar arquitecturas modernas de software, incluyendo **RAG (Retrieval-Augmented Generation)**, **Búsqueda Vectorial** y **Desarrollo Web Fullstack**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack Tecnológico
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+El proyecto utiliza una arquitectura **Serverless** centrada en **JavaScript/TypeScript**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend & Backend**: Next.js 14 (App Router) + React.
+- **Estilos**: Tailwind CSS + Shadcn/ui.
+- **Base de Datos & Auth**: Supabase (PostgreSQL + Auth).
+- **Motor de IA**: LangChain.js (Orquestación) + OpenAI (Embeddings & LLM).
+- **Búsqueda Vectorial**: pgvector (Extensión de PostgreSQL en Supabase).
 
-## Learn More
+## ✨ Características (Requerimientos)
 
-To learn more about Next.js, take a look at the following resources:
+El desarrollo se rige por los siguientes módulos funcionales:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Gestión de Usuarios y Perfiles (RF-01, RF-02)
+- **Auth**: Login y Registro seguro (gestionado por Supabase Auth).
+- **Onboarding**: Encuesta inicial de preferencias políticas (Economía, Seguridad, Social) editable desde el perfil.
+- **Privacidad (RNF-01)**: Los datos sensibles de la encuesta no se utilizan para reentrenar modelos de IA ni se comparten con terceros.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Explorador de Candidatos (RF-01, RF-04)
+- **Cards Informativas**: Visualización clara de la hoja de vida, foto y partido político.
+- **Partidos**: Sección dedicada a la ideología y estructura de las organizaciones políticas.
 
-## Deploy on Vercel
+### 3. Motor de Afinidad con IA (RF-01, RF-02)
+El corazón del proyecto. Utilizamos Embeddings para calcular la similitud semántica.
+- **Algoritmo**: Compara el vector de preferencias del usuario contra los vectores de los Planes de Gobierno almacenados en la base de datos.
+- **Match**: Muestra un porcentaje de afinidad en cada card.
+- **Transparencia (RNF-02)**: Toda afirmación o resumen generado cita obligatoriamente la fuente oficial (página del plan de gobierno) para evitar difamaciones.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Educación Cívica (RF-04)
+- **Guía para Novatos**: Infografías interactivas sobre cómo votar.
+- **Modo Offline (RNF-03)**: Recursos descargables para zonas con baja conectividad.
+- **Historial**: Análisis de campañas y mandatos anteriores con estadísticas visuales.
