@@ -18,9 +18,9 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: 'Inicio', href: '/' },
-        { name: '¿Cómo funciona?', href: '/como-funciona' },
-        { name: 'Objetivo', href: '/objetivo' },
+        { name: 'Main', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Mision', href: '/mision' },
     ];
 
     return (
