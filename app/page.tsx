@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero";
-import RealidadNacional from "@/components/RealidadNacional";
-import CandidatosPropuestas from "@/components/CandidatosPropuestas";
+import Hero from "@/components/common/Hero";
+import RealidadNacional from "@/components/common/RealidadNacional";
+import CandidatosPropuestas from "@/components/common/CandidatosPropuestas";
 
 export default function Home() {
   return (
