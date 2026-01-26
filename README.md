@@ -1,41 +1,103 @@
 # 🗳️ AKLLAI - Plataforma de Voto Informado con IA
 
-> "Proporcionar una plataforma transparente y centralizada que empodere al ciudadano peruano mediante datos abiertos e inteligencia artificial."
+<p align="center">
+  <img src="/public/images/palacio.jpg" alt="AkllAI Banner" width="100%" style="border-radius: 12px; border: 1px solid #333;">
+</p>
+
+> **"Empoderando al ciudadano peruano a través de datos abiertos, transparencia e inteligencia artificial."**
+
+---
 
 ## 📖 Sobre el Proyecto
 
-**AKLLAI** (vocablo que evoca "elección" o "selección") es una iniciativa tecnológica nacida para cerrar la brecha de información entre los ciudadanos y los candidatos políticos en Perú. Este proyecto sirve como laboratorio de aprendizaje para implementar arquitecturas modernas de software, incluyendo **RAG (Retrieval-Augmented Generation)**, **Búsqueda Vectorial** y **Desarrollo Web Fullstack**.
+**AKLLAI** (del quechua: *elegir* o *seleccionar*) es una plataforma diseñada para cerrar la brecha informativa entre ciudadanos y candidatos políticos en el Perú. Utilizando tecnologías de vanguardia como **RAG (Retrieval-Augmented Generation)** y **Búsqueda Vectorial**, permitimos a los usuarios encontrar su afinidad política real basándose en datos oficiales, no en retórica.
+
+Este proyecto sirve como un entorno colaborativo para implementar arquitecturas modernas de software y promover la educación cívica digital.
+
+---
 
 ## 🛠️ Stack Tecnológico
 
-El proyecto utiliza una arquitectura **Serverless** centrada en **JavaScript/TypeScript**:
+| Tecnología | Propósito |
+| :--- | :--- |
+| **Next.js 15+** | Framework React con App Router para alto rendimiento y SEO. |
+| **Supabase** | Backend-as-a-Service (PostgreSQL, Auth, Storage). |
+| **Tailwind CSS** | Sistema de diseño moderno y responsivo con estética Dark Mode. |
+| **LangChain.js** | Orquestación de lógica de IA y flujos RAG. |
+| **OpenAI / Groq** | Embeddings y modelos de lenguaje (LLM). |
+| **Lucide React** | Librería de iconos vectoriales consistentes. |
 
-- **Frontend & Backend**: Next.js 14 (App Router) + React.
-- **Estilos**: Tailwind CSS + Shadcn/ui.
-- **Base de Datos & Auth**: Supabase (PostgreSQL + Auth).
-- **Motor de IA**: LangChain.js (Orquestación) + OpenAI (Embeddings & LLM).
-- **Búsqueda Vectorial**: pgvector (Extensión de PostgreSQL en Supabase).
+---
 
-## ✨ Características (Requerimientos)
+## ✨ Características Principales
 
-El desarrollo se rige por los siguientes módulos funcionales:
+### 🧠 Motor de Afinidad con IA
+El "corazón" de AkllAI. Utilizamos embeddings para calcular la similitud semántica entre las preocupaciones del usuario y los planes de gobierno oficiales.
+- **Match Preciso:** Porcentajes de afinidad calculados matemáticamente.
+- **Transparencia Total:** Toda respuesta generada por la IA cita obligatoriamente la página y el documento oficial.
 
-### 1. Gestión de Usuarios y Perfiles (RF-01, RF-02)
-- **Auth**: Login y Registro seguro (gestionado por Supabase Auth).
-- **Onboarding**: Encuesta inicial de preferencias políticas (Economía, Seguridad, Social) editable desde el perfil.
-- **Privacidad (RNF-01)**: Los datos sensibles de la encuesta no se utilizan para reentrenar modelos de IA ni se comparten con terceros.
+### 👤 Perfiles y Onboarding
+- **Auth Seguro:** Gestión de usuarios mediante Supabase Auth.
+- **Encuesta de Preferencias:** Un flujo interactivo para definir qué temas importan más al ciudadano (seguridad, economía, salud).
 
-### 2. Explorador de Candidatos (RF-01, RF-04)
-- **Cards Informativas**: Visualización clara de la hoja de vida, foto y partido político.
-- **Partidos**: Sección dedicada a la ideología y estructura de las organizaciones políticas.
+### 🏛️ Explorador de Candidatos
+- **Dashboard Interactivo:** Visualización de hojas de vida, trayectorias y partidos.
+- **Visualización de Datos:** Comparativas gráficas entre propuestas del mismo sector.
 
-### 3. Motor de Afinidad con IA (RF-01, RF-02)
-El corazón del proyecto. Utilizamos Embeddings para calcular la similitud semántica.
-- **Algoritmo**: Compara el vector de preferencias del usuario contra los vectores de los Planes de Gobierno almacenados en la base de datos.
-- **Match**: Muestra un porcentaje de afinidad en cada card.
-- **Transparencia (RNF-02)**: Toda afirmación o resumen generado cita obligatoriamente la fuente oficial (página del plan de gobierno) para evitar difamaciones.
+---
 
-### 4. Educación Cívica (RF-04)
-- **Guía para Novatos**: Infografías interactivas sobre cómo votar.
-- **Modo Offline (RNF-03)**: Recursos descargables para zonas con baja conectividad.
-- **Historial**: Análisis de campañas y mandatos anteriores con estadísticas visuales.
+## 🚀 Guía de Inicio Rápido
+
+Para levantar el proyecto localmente y empezar a colaborar:
+
+### 1. Clonar y Configurar
+```bash
+# Instalar dependencias
+npm install
+
+# Copiar variables de entorno
+cp .env.example .env.local
+```
+
+### 2. Variables de Entorno (.env.local)
+Asegúrate de configurar las siguientes llaves en tu archivo local:
+```env
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_anon_key
+# Añadir llaves de OpenAI o Groq de ser necesario
+```
+
+### 3. Ejecutar en Desarrollo
+```bash
+npm run dev
+```
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+akllai/
+├── app/              # Rutas, layouts y componentes de página (App Router)
+├── components/       # Componentes de UI reutilizables (common, layout, ui)
+├── lib/              # Configuración de clientes (Supabase, Langchain, etc.)
+├── public/           # Assets estáticos (imágenes, logos)
+├── types/            # Definiciones de interfaces TypeScript
+└── middleware.ts     # Control de sesiones y protección de rutas
+```
+
+---
+
+## 🤝 Contribución
+
+Si eres parte del equipo de desarrollo de AkllAI:
+1. Asegúrate de tener tu `.env.local` configurado con el proyecto actual de Supabase.
+2. Usa el estándar de **2 espacios** para la indentación (configurado en `.editorconfig`).
+3. Crea una rama para cada feature: `git checkout -b feature/nombre-de-la-mejora`.
+4. Antes de subir cambios, ejecuta `npm run lint` para verificar errores.
+
+---
+
+<p align="center">
+  Hecho con ❤️ para el fortalecimiento de la democracia en el Perú.
+</p>
