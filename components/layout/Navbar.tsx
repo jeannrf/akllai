@@ -58,10 +58,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4 z-20">
             <Link
               href="/auth/login"
-              className="relative group overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105"
+              className="text-white/70 hover:text-white px-6 py-2.5 rounded-full font-medium text-sm tracking-wide border border-white/10 hover:bg-white/5 transition-all duration-300"
             >
-              <span className="relative z-10">Ingresar</span>
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              Ingresar
             </Link>
 
             <Link
@@ -102,7 +101,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/auth/login"
-              className="mt-8 bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              className="mt-8 text-white/70 hover:text-white px-8 py-3 rounded-full font-medium text-lg border border-white/10 hover:bg-white/5 transition-all duration-300"
               onClick={() => setIsOpen(false)}
             >
               Ingresar
