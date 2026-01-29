@@ -18,16 +18,15 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Main", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Mision", href: "/mision" },
+    { name: "Inicio", href: "/" },
+    { name: "Nosotros", href: "/about" },
+    { name: "Misión", href: "/mision" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-4" : "py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4" : "py-6"
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-2xl shadow-black/50">
@@ -41,13 +40,13 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation - Absolute Center */}
-          <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="flex items-center space-x-8">
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="flex items-center space-x-6 xl:space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium tracking-wide hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                  className="relative text-zinc-410 hover:text-white transition-all duration-300 text-sm font-medium tracking-wide hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
@@ -56,22 +55,28 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center z-20">
+          <div className="hidden lg:flex items-center space-x-3 z-20">
             <Link
-              href="/prueba"
-              className="relative group overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105"
+              href="/auth/login"
+              className="text-white/70 hover:text-white px-5 py-2 rounded-full font-medium text-sm tracking-wide border border-white/10 hover:bg-white/5 transition-all duration-300 whitespace-nowrap"
             >
-              <span className="relative z-10">Prueba ya AkllAI</span>
-              {/* Shine effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              Ingresar
+            </Link>
+
+            <Link
+              href="/auth/register"
+              className="relative group overflow-hidden bg-linear-to-r from-red-600 to-orange-500 text-white px-5 py-2 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+            >
+              <span className="relative z-10">Registrarse</span>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center z-20">
+          {/* Mobile Menu Button - Visible on md and down */}
+          <div className="lg:hidden flex items-center z-20">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-red-500 transition-colors focus:outline-none"
+              className="p-2 text-white hover:text-red-500 transition-colors focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,11 +100,18 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/prueba"
-              className="mt-8 bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              href="/auth/login"
+              className="mt-8 text-white/70 hover:text-white px-8 py-3 rounded-full font-medium text-lg border border-white/10 hover:bg-white/5 transition-all duration-300"
               onClick={() => setIsOpen(false)}
             >
-              Prueba ya AkllAI
+              Ingresar
+            </Link>
+            <Link
+              href="/auth/register"
+              className="bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              onClick={() => setIsOpen(false)}
+            >
+              Registrarse
             </Link>
           </div>
         </div>
