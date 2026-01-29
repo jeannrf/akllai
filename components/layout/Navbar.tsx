@@ -18,16 +18,15 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Main", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Mision", href: "/mision" },
+    { name: "Inicio", href: "/" },
+    { name: "Nosotros", href: "/about" },
+    { name: "Misión", href: "/mision" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-4" : "py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4" : "py-6"
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 md:px-8 py-3 flex items-center justify-between shadow-2xl shadow-black/50">
@@ -56,13 +55,20 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center z-20">
+          <div className="hidden md:flex items-center space-x-4 z-20">
             <Link
-              href="/prueba"
+              href="/auth/login"
               className="relative group overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105"
             >
-              <span className="relative z-10">Prueba ya AkllAI</span>
-              {/* Shine effect */}
+              <span className="relative z-10">Ingresar</span>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </Link>
+
+            <Link
+              href="/auth/register"
+              className="relative group overflow-hidden bg-gradient-to-r from-red-600 to-orange-500 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105"
+            >
+              <span className="relative z-10">Registrarse</span>
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </Link>
           </div>
@@ -95,11 +101,18 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/prueba"
+              href="/auth/login"
               className="mt-8 bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)]"
               onClick={() => setIsOpen(false)}
             >
-              Prueba ya AkllAI
+              Ingresar
+            </Link>
+            <Link
+              href="/auth/register"
+              className="bg-gradient-to-r from-red-600 to-orange-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+              onClick={() => setIsOpen(false)}
+            >
+              Registrarse
             </Link>
           </div>
         </div>
