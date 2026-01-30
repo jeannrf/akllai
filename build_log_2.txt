@@ -1,0 +1,25 @@
+
+> akllai@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.4 (Turbopack)
+
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 3.3s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/9) ...
+Error occurred prerendering page "/auth/register". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: @supabase/ssr: Your project's URL and API key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at <unknown> (https://supabase.com/dashboard/project/_/settings/api)
+    at <unknown> (C:\Users\aleja\Akllai\akllai\.next\server\chunks\ssr\_625c0125._.js:55:62)
+    at cu (C:\Users\aleja\Akllai\akllai\.next\server\chunks\ssr\_625c0125._.js:59:4544) {
+  digest: '3236415622'
+}
+Export encountered an error on /auth/register/page: /auth/register, exiting the build.
+Ô¿» Next.js build worker exited with code: 1 and signal: null

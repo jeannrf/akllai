@@ -1,0 +1,57 @@
+
+> akllai@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.4 (Turbopack)
+
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./lib/middleware-utils.ts:1:1
+Module not found: Can't resolve '@supabase/ssr'
+> 1 | import { createServerClient, type CookieOptions } from '@supabase/ssr'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { NextResponse, type NextRequest } from 'next/server'
+  3 |
+  4 | export async function updateSession(request: NextRequest) {
+
+
+
+Import trace:
+  Edge Middleware:
+    ./lib/middleware-utils.ts
+    ./middleware.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./lib/supabase.ts:1:1
+Module not found: Can't resolve '@supabase/ssr'
+> 1 | import { createBrowserClient } from '@supabase/ssr';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export const createClient = () =>
+  4 |   createBrowserClient(
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lib/supabase.ts [Client Component Browser]
+    ./app/auth/register/page.tsx [Client Component Browser]
+    ./app/auth/register/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/supabase.ts [Client Component SSR]
+    ./app/auth/register/page.tsx [Client Component SSR]
+    ./app/auth/register/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./lib/middleware-utils.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./lib/supabase.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

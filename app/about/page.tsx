@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import TypewriterText from "@/components/common/TypewriterText";
+
 
 export default function About() {
   return (
@@ -24,10 +26,12 @@ export default function About() {
               AKLLAI
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 font-light max-w-2xl mx-auto leading-relaxed">
-            Democratizando la información política a través de la inteligencia
-            artificial.
-          </p>
+          <TypewriterText
+            className="text-xl md:text-2xl text-zinc-400 font-light max-w-2xl mx-auto leading-relaxed min-h-[6rem] md:min-h-[4rem]"
+            text="Democratizando la información política a través de la inteligencia artificial."
+            speed={20}
+            delay={500}
+          />
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#D91023] to-transparent mx-auto rounded-full" />
         </div>
 
@@ -44,12 +48,12 @@ export default function About() {
               <h2 className="text-2xl font-bold text-white group-hover:text-[#D91023] transition-colors">
                 Voto Informado
               </h2>
-              <p className="text-zinc-400 leading-relaxed">
-                En un mar de desinformación y campañas ruidosas, encontrar
-                propuestas reales es difícil. AkllAI simplifica el análisis de
-                planes de gobierno, permitiéndote comparar candidatos
-                objetivamente.
-              </p>
+              <TypewriterText
+                className="text-zinc-400 leading-relaxed min-h-[8rem]"
+                text="En un mar de desinformación y campañas ruidosas, encontrar propuestas reales es difícil. AkllAI simplifica el análisis de planes de gobierno, permitiéndote comparar candidatos objetivamente."
+                speed={15}
+                delay={1500}
+              />
             </div>
           </div>
 
@@ -64,11 +68,12 @@ export default function About() {
               <h2 className="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">
                 Análisis con IA
               </h2>
-              <p className="text-zinc-400 leading-relaxed">
-                Utilizamos modelos de lenguaje avanzados para procesar miles de
-                páginas de documentos oficiales, extrayendo los puntos clave,
-                contradicciones y viabilidad de cada propuesta.
-              </p>
+              <TypewriterText
+                className="text-zinc-400 leading-relaxed min-h-[6rem]"
+                text="Utilizamos modelos de lenguaje avanzados para procesar miles de páginas de documentos oficiales, extrayendo los puntos clave, contradicciones y viabilidad de cada propuesta."
+                speed={15}
+                delay={2000}
+              />
             </div>
           </div>
 
@@ -79,18 +84,18 @@ export default function About() {
                 <h2 className="text-3xl font-bold text-white">
                   Nuestra Visión
                 </h2>
-                <p className="text-lg text-zinc-300 leading-relaxed">
-                  Imaginamos un futuro donde cada ciudadano tenga un asistente
-                  personal imparcial que le ayude a navegar la complejidad de la
-                  política nacional. AkllAI no te dice por quién votar, te da
-                  las herramientas para que tú decidas.
-                </p>
+                <TypewriterText
+                  className="text-lg text-zinc-300 leading-relaxed min-h-[6rem]"
+                  text="Imaginamos un futuro donde cada ciudadano tenga un asistente personal imparcial que le ayude a navegar la complejidad de la política nacional. AkllAI no te dice por quién votar, te da las herramientas para que tú decidas."
+                  speed={15}
+                  delay={2500}
+                />
                 <div className="flex gap-4 pt-4">
                   <Link
-                    href="/prueba"
+                    href="/Prueba Akllai"
                     className="px-6 py-3 bg-gradient-to-r from-[#D91023] to-orange-400 text-white rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all duration-300 transform hover:scale-105"
                   >
-                    Probar Tecnología
+                    Prueba Akllai
                   </Link>
                   <Link
                     href="/"
